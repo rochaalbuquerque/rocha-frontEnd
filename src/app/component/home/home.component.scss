@@ -1,0 +1,76 @@
+.home-container {
+  background: #fffffe;
+  font-family: 'Roboto', sans-serif;
+  color: #f6f8f1;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  height: auto;
+  padding: 20px;
+}
+
+.hero-section {
+  background: transparent;
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #007bff;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.services-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.service-card {
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: calc(22.222% - 20px); //calc(33.333% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+
+.service-card img {
+  width: 100%;
+  height: auto;
+  max-width: 300px; /* Tamanho máximo da largura */
+  max-height: 200px; /* Tamanho máximo da altura */
+  object-fit: cover; /* Ajusta o tamanho da imagem para cobrir a área sem distorcer */
+  border-radius: 8px; /* Borda arredondada nas imagens */
+  margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+}
+
+.service-card h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #007bff;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.footer-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

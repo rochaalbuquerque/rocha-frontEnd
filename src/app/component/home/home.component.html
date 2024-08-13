@@ -1,0 +1,14 @@
+<div class="home-container">
+  <header class="hero-section">
+    <h1>ROCHA</h1>
+    <p>System</p>
+  </header>
+
+  <section class="services-section">
+    <div class="service-card" *ngFor="let service of services">
+      <img [src]="service.image" [alt]="service.title" />
+      <h2>{{ service.title }}</h2>
+      <p>{{ service.description }}</p>
+    </div>
+  </section>
+</div>

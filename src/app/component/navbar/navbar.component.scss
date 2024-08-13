@@ -1,0 +1,36 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #3ac566, #0629c4); //linear-gradient(to right, #3f51b5, #9c27b0); /* Gradiente de azul para roxo */
+  color: white;
+
+  .mat-mdc-button {
+    color: #f4eeee;
+}
+
+  .logo {
+    height: 40px;
+    background-color: transparent;
+    border-radius: 50%;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  button {
+    margin-left: 15px;
+    color: white;
+  }
+}
+
+mat-button  {
+  .a {
+    color: white;
+    }
+}
+
+
+
+

@@ -1,0 +1,26 @@
+<div class="contact-container">
+  <h2>Clientes</h2>
+  <form class="contact-form" [formGroup]="clientForm"
+    (ngSubmit)="submitClient()">
+
+    <label for="firstName">First Name:</label>
+    <input id="firstName" formControlName="firstName" />
+
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" formControlName="lastName" />
+
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" />
+
+    <label for="cpfOuCnpj">CPF ou CNPJ:</label>
+    <input id="cpfOuCnpj" formControlName="cpfOuCnpj" />
+
+    <button type="submit">Salvar</button>
+  </form>
+
+  <!-- Success Message -->
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+</div>
