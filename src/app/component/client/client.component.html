@@ -1,26 +1,63 @@
-<div class="contact-container">
-  <h2>Clientes</h2>
-  <form class="contact-form" [formGroup]="clientForm"
-    (ngSubmit)="submitClient()">
+<div class="container">
 
-    <label for="firstName">First Name:</label>
-    <input id="firstName" formControlName="firstName" />
+  <div class="form-container">
+    <h2>Cadastrar Novos Clientes</h2>
+    <form [formGroup]="clientForm" (ngSubmit)="submitClient()">
+      <div class="form-group">
+        <label for="firstName">Nome</label>
+        <input id="firstName" formControlName="firstName" />
+      </div>
 
-    <label for="lastName">Last Name:</label>
-    <input id="lastName" formControlName="lastName" />
+      <div class="form-group">
+        <label for="lastName">Sobrenome</label>
+        <input id="lastName" formControlName="lastName" />
+      </div>
 
-    <label for="email">Email:</label>
-    <input id="email" formControlName="email" />
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" />
+      </div>
 
-    <label for="cpfOuCnpj">CPF ou CNPJ:</label>
-    <input id="cpfOuCnpj" formControlName="cpfOuCnpj" />
+      <div class="form-group">
+        <label for="cpfOuCnpj">CPF/CNPJ</label>
+        <input id="cpfOuCnpj" formControlName="cpfOuCnpj" />
+      </div>
 
-    <button type="submit">Salvar</button>
-  </form>
+      <button type="submit" class="submit-btn">Save</button>
+    </form>
+  </div>
 
-  <!-- Success Message -->
-  <div *ngIf="successMessage" class="alert alert-success">
-    {{ successMessage }}
+  <div class="table-container">
+    <h2>Clientes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let client of allClients | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+          <td>{{ client.id }}</td>
+          <td>{{ client.firstName }}</td>
+          <td>{{ client.lastName }}</td>
+          <td>
+            <button class="edit-btn" (click)="editClient(client)">Editar</button>
+            <button class="delete-btn"
+              (click)="deleteClient(client.id)">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <pagination-controls (pageChange)="onPageChange($event)"
+      previousLabel="Anterior" nextLabel="Próximo"
+      class="pagination" class="pagination"></pagination-controls>
+
+    <div>Total de páginas: {{ totalPages }}</div>
   </div>
 
 </div>
