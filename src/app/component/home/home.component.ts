@@ -2,11 +2,16 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, MatToolbarModule, MatButtonModule, MatIconModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -15,8 +20,9 @@ export class HomeComponent {
   services = [
     {
       image: 'assets/et_1.jpg',
-      title: 'Serviço 1',
-      description: 'Descrição breve do serviço 1 oferecido pela empresa.'
+      title: 'Clientes',
+      description: 'Lista de clientes',
+      router: 'client'
     },
     {
       image: 'assets/et_2.jpg',
