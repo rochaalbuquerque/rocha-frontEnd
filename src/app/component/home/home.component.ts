@@ -40,5 +40,6 @@ export class HomeComponent {
       description: 'Descrição breve do serviço 4 oferecido pela empresa.'
     }
   ];
+service: any;
 
 }

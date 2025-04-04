@@ -1,7 +1,8 @@
+
 .home-container {
-  background: #fffffe;
+  background: black;
   font-family: 'Roboto', sans-serif;
-  color: #f6f8f1;
+  color: #fdfdfc;
   text-align: center;
   margin: 0 auto;
   max-width: 1200px;
@@ -13,19 +14,30 @@
   background: transparent;
   padding: 40px 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgb(248, 246, 246);
   margin-bottom: 40px;
 }
 
 .hero-section h1 {
   font-size: 2.5rem;
   margin: 0;
-  color: #007bff;
+  color: rgb(94, 243, 25);
+}
+
+.hero-section h1::after {
+  content: "";
+  background: url('/assets/et_5.png') no-repeat center; /* Substitua pelo URL da sua imagem */
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  margin-top: 0px;
+
 }
 
 .hero-section p {
   font-size: 1.2rem;
-  color: #555;
+  color: #faf8f8;
 }
 
 .services-section {
@@ -38,7 +50,7 @@
 .service-card {
   background: transparent;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.966);
   padding: 20px;
   width: calc(22.222% - 20px); //calc(33.333% - 20px);
   box-sizing: border-box;
@@ -49,9 +61,9 @@
 .service-card img {
   width: 100%;
   height: auto;
-  max-width: 300px; /* Tamanho máximo da largura */
-  max-height: 200px; /* Tamanho máximo da altura */
-  object-fit: cover; /* Ajusta o tamanho da imagem para cobrir a área sem distorcer */
+  max-width: 300px; /* Tamanho máximo da largura*/
+  max-height: 200px; /* Tamanho máximo da altura*/
+  object-fit: cover; /* Ajusta o tamanho da imagem para cobrir a área sem distorcer*/
   border-radius: 8px; /* Borda arredondada nas imagens */
   margin-bottom: 15px; /* Espaçamento abaixo da imagem */
 }
@@ -59,25 +71,25 @@
 .service-card h2 {
   font-size: 1.5rem;
   margin: 10px 0;
-  color: #007bff;
+  color: #41f741;
 }
 
 .service-card p {
   font-size: 1rem;
-  color: #555;
+  color: #eeeaea;
 }
 
 .footer-section {
   margin-top: 40px;
   padding: 20px;
-  background: #f8f9fa;
+  background: black;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgb(253, 251, 251);
 }
 
 .title-button {
-  font-size: 1.5rem; /* Tamanho equivalente ao <h2> */
+  font-size: 1.5rem; /* Tamanho equivalente ao <h2>*/
   font-weight: bold;
   text-transform: none;
-  color: darkslategrey;
+  color: rgb(94, 243, 25);
 }

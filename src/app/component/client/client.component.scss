@@ -3,26 +3,26 @@
   display: flex;
   background-color: transparent;
   width: 97%;
-
   gap: 2rem;
   padding: 2rem;
-  margin: 0 auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 5% auto;
+  box-shadow: 0 4px 8px rgb(250, 249, 249);
   border-radius: 20px;
+  color: #ddd;
 }
 
 .table-container {
   background-color: transparent;
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgb(252, 251, 251);
   width: 75%;
 }
 
 h2 {
   margin-bottom: 1rem;
   font-size: 1.5rem;
-  color: #343a40;
+  color: #eff0f1;
 }
 
 table {
@@ -39,13 +39,17 @@ td {
 
 th {
   background-color: transparent;
-  color: black;
+  color: rgb(247, 246, 246);
 }
 
 tr:nth-child(even) {
   //background-color: #eef5e9;
-  background: linear-gradient(to right, #d2e1fd, #dddddd);
-}
+  background: radial-gradient(
+    circle at 30% 50%,
+    rgba(45, 46, 45, 0.664) 0%,  /* Verde menos saturado e semitransparente */
+    rgb(119, 117, 115) 40%,         /* Transição mais rápida para o verde escuro */
+    black 100%
+  );}
 
 button {
   padding: 0.5rem 1rem;
@@ -55,22 +59,22 @@ button {
 
 .edit-btn {
   background-color: transparent;
-  color: #5957f3;
+  color: #eeebeb;
   margin-right: 0.5rem;
-  border-color: #5957f3;
+  border-color: rgba(8, 61, 236, 0.8)
 }
 
 .delete-btn {
   background-color: transparent;
-  color: red;
-  border-color: red;
+  color: #f8bbbb;
+  border-color: rgba(255, 0, 0, 0.973);
 }
 
 .form-container {
   background-color: transparent;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgb(252, 251, 251);
   width: 20%;
 }
 
@@ -82,7 +86,7 @@ label {
   display: block;
   margin-bottom: 0.5rem;
   font-size: 1rem;
-  color: #495057;
+  color: #f8f9fa;
 }
 
 input {
@@ -100,13 +104,19 @@ input:focus {
 }
 
 .submit-btn {
-  background: linear-gradient(to right, #226bf3, #414040);
+  //background: linear-gradient(to right, #226bf3, #414040);
+  background: radial-gradient(
+  circle at 50% 10%,
+  rgba(8, 61, 236, 0.8) 20%,  /* Verde menos saturado e semitransparente */
+  rgb(7, 7, 7) 60%,         /* Transição mais rápida para o verde escuro */
+  black 100%
+);
   color: #ffffff;
   width: 100%;
   padding: 0.75rem;
   border-radius: 4px;
   font-size: 1rem;
-  border-color: transparent;
+  border-color: #ddd;
 
 }
 
@@ -145,4 +155,37 @@ input:focus {
       cursor: not-allowed;
     }
   }
+}
+
+/* Estilo base do botão Cancelar */
+.cancel-btn {
+  background: #ddd;
+  color: #0529f8;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  border-color: #0529f8;
+  margin-top: 1%;;
+}
+
+/* Efeito hover */
+.cancel-btn:hover {
+  background-color: #2d6adb; /* Vermelho mais escuro */
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(150, 195, 236, 0.2);
+}
+
+/* Efeito quando clicado */
+.cancel-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Estilo quando o botão está desabilitado */
+.cancel-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }

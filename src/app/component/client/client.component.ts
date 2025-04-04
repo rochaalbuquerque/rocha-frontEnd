@@ -10,6 +10,8 @@ interface Client {
   id: number;
   firstName: string;
   lastName: string;
+  email: string;
+  cpfOuCnpj: string;
 }
 
 @Component({
@@ -66,10 +68,23 @@ export class ClientComponent implements OnInit {
     return Math.ceil(this.totalItems / this.itemsPerPage);
   }
 
-  editClient(client: Client): void {
-    // Lógica para editar o cliente
-    console.log('Edit client:', client);
+  isEditing = false;
+  currentClientId: number | null = null;
+
+  editClient(client: any): void {
+
+    this.isEditing = true;
+    this.currentClientId = client.id;
+
+    this.clientForm.patchValue({
+      firstName: client.firstName,
+      lastName: client.lastName,
+      email: client.email,
+      cpfOuCnpj: client.cpfOuCnpj
+    });
+
   }
+
 
   deleteClient(clientId: number): void {
     this.http.delete(`http://localhost:8080/clients/${clientId}`).subscribe({
@@ -84,7 +99,10 @@ export class ClientComponent implements OnInit {
     });
   }
 
+  /*
   submitClient(): void {
+
+
     const clientData = this.clientForm.value;
 
     this.http.post('http://localhost:8080/clients', clientData)
@@ -105,5 +123,51 @@ export class ClientComponent implements OnInit {
           this.loadClients(); // Atualiza a lista de clientes após a inclusão
         }
       });
+
+  }*/
+
+submitClient() {
+  if (this.clientForm.valid) {
+    const clientData = this.clientForm.value;
+
+    if (this.isEditing && this.currentClientId) {
+      this.http.put(`http://localhost:8080/clients/${this.currentClientId}`, clientData).subscribe({
+        next: () => {
+          alert('Cliente atualizado com sucesso!');
+          this.resetForm();
+          this.loadClients();
+        },
+        error: (error) => {
+          console.error('Erro ao atualizar cliente', error);
+          alert('Erro ao atualizar cliente!');
+        }
+      });
+    } else {
+      this.http.post('http://localhost:8080/clients', clientData).subscribe({
+        next: () => {
+          alert('Cliente criado com sucesso!');
+          this.resetForm();
+          this.loadClients();
+        },
+        error: (error) => {
+          console.error('Erro ao criar cliente', error);
+          alert('Erro ao criar cliente!');
+        }
+      });
+    }
   }
+}
+
+// Adicione um método para resetar o formulário
+resetForm() {
+  this.clientForm.reset();
+  this.isEditing = false;
+  this.currentClientId = null;
+}
+
+// Adicione um botão de cancelar no seu HTML e vincule a este método
+cancelEdit() {
+  this.resetForm();
+}
+
 }

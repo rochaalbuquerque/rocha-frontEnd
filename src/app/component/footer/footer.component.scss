@@ -1,20 +1,19 @@
 .footer {
-  //background-color:#3f51b5;
-  background: linear-gradient(to right, #3ac566, #0629c4);
+  background: linear-gradient(150deg, black, black);
   color: #ffffff;
   padding: 1rem 0;
   text-align: center;
   position: relative;
   bottom: 0;
   width: 100%;
-
-margin-top: 14%;
+  margin-top: 10%;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+
 }
 
 .social-links {
@@ -30,7 +29,7 @@ margin-top: 14%;
 }
 
 .social-link:hover {
-  color: #1da1f2; /* Exemplo de cor ao passar o mouse; ajuste conforme necessário */
+  color: #1df21d;
 }
 
 .fab {

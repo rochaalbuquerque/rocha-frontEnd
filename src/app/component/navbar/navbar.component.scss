@@ -2,7 +2,13 @@ mat-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #3ac566, #0629c4); //linear-gradient(to right, #3f51b5, #9c27b0); /* Gradiente de azul para roxo */
+  //background: linear-gradient(150deg, rgb(41, 245, 23), black);
+  background: radial-gradient(
+  circle at 30% 50%,
+  rgba(50, 200, 20, 0.8) 0%,  /* Verde menos saturado e semitransparente */
+  rgb(15, 70, 5) 40%,         /* Transição mais rápida para o verde escuro */
+  black 100%
+);
   color: white;
 
   .mat-mdc-button {
